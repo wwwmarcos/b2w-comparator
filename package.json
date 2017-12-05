@@ -1,10 +1,10 @@
 {
-  "name": "bw2-comparator",
+  "name": "b2w-comparator",
   "dependencies": {
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2"
   },
   "bin": {
-    "bw2": "index.js"
+    "b2w": "index.js"
   }
 }

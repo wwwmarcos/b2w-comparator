@@ -17,21 +17,25 @@ const getPages = async (baseUrl, urls) => {
 
 const getPriceInfo = (page) => {
   const $ = cheerio.load(page.data)
+
   const price = $('.main-price .sales-price').text()
   const paymentOptions = $('.payment-option-rate').text()
+  const title = $('title').text()
 
   return {
+    title,
     price,
     paymentOptions
   }
 }
 
-const buildPrices = async (baseUrl) => {
+const logResults = result => console.log(JSON.stringify(result, null, 2))
+
+const buildPrices = async (baseUrl, done) => {
   const pages = await getPages(baseUrl, urls)
-
-  const prices = pages.map(getPriceInfo)
-
-  console.log('prices', JSON.stringify(prices, null, 2))
+  done(pages.map(getPriceInfo))
 }
 
-buildPrices('https://www.submarino.com.br/produto/132116662/notebook-dell-inspiron-i15-5566-a30p-intel-core-i5-4gb-1tb-tela-led-15.6-windows-10-preto')
+const site = process.argv[2]
+
+buildPrices(site, logResults)

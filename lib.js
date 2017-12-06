@@ -39,7 +39,7 @@ const getProductInfo = (page) => {
     price,
     name,
     paymentOptions,
-    url: page.url
+    url: page.productUrl
   }
 }
 

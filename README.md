@@ -1,4 +1,8 @@
-# bw2-comparator
+# b2w-comparator
+
+Exemplo
+
+> b2w https://www.submarino.com.br/produto/132116662/notebook-dell-inspiron-i15-5566-a30p-intel-core-i5-4gb-1tb-tela-led-15.6-windows-10-preto
 
 ```
 [                                                                                                                                                                

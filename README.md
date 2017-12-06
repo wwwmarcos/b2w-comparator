@@ -2,7 +2,7 @@
 
 Exemplo
 
-> b2w https://www.shoptime.com.br/produto/128479153/smart-tv-led-tela-curva-40-samsung-40ku6300-ultra-hd-4k-3-hdmi-2-usb
+> b2w https://www.americanas.com.br/produto/128479153/smart-tv-led-tela-curva-40-samsung-40ku6300-ultra-hd-4k-3-hdmi-2-usb
 
 ```
 [

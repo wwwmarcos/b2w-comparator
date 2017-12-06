@@ -27,14 +27,16 @@ const getPages = async (baseUrl, urls) => {
   return Promise.all(resolve)
 }
 
-const getPriceInfo = (page) => {
+const getProductInfo = (page) => {
   const $ = cheerio.load(page.data)
 
   const price = $('.main-price .sales-price').text()
   const paymentOptions = $('.payment-option-rate').text()
+  const name = $('.product-name').text()
 
   return {
     price,
+    name,
     paymentOptions
   }
 }
@@ -45,8 +47,8 @@ const buildPrices = async (baseUrl, done) => {
   const result = pages.map(page => {
     return {
       url: page.url,
-      name: page.name,
-      priceInfo: getPriceInfo(page)
+      shopName: page.name,
+      product: getProductInfo(page)
     }
   })
 

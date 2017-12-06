@@ -8,18 +8,19 @@ const getProductId = (url) => {
   return match ? match[1] : null
 }
 
-const buildUrl = (url, id) => `${url}/${id}`
+const buildUrl = (url, id) => `${url}/produto/${id}`
 
 const getPages = async (baseUrl, urls) => {
   const productId = getProductId(baseUrl)
 
   const resolve = urls.map(async shop => {
-    const url = buildUrl(shop.url, productId)
-    const page = await axios.get(url)
+    const productUrl = buildUrl(shop.url, productId)
+    const page = await axios.get(productUrl)
 
     return {
       data: page.data,
-      url,
+      productUrl,
+      shopUrl: shop.url,
       name: shop.name
     }
   })
@@ -37,7 +38,8 @@ const getProductInfo = (page) => {
   return {
     price,
     name,
-    paymentOptions
+    paymentOptions,
+    url: page.url
   }
 }
 
@@ -46,8 +48,8 @@ const buildPrices = async (baseUrl, done) => {
 
   const result = pages.map(page => {
     return {
-      url: page.url,
       shopName: page.name,
+      shopUrl: page.shopUrl,
       product: getProductInfo(page)
     }
   })

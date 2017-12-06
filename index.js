@@ -13,7 +13,18 @@ const buildUrl = (url, id) => `${url}/${id}`
 
 const getPages = async (baseUrl, urls) => {
   const productId = getProductId(baseUrl)
-  const resolve = urls.map(shop => axios.get(buildUrl(shop.url, productId)))
+
+  const resolve = urls.map(async shop => {
+    const url = buildUrl(shop.url, productId)
+    const page = await axios.get(url)
+
+    return {
+      data: page.data,
+      url,
+      name: shop.name
+    }
+  })
+
   return Promise.all(resolve)
 }
 
@@ -22,10 +33,8 @@ const getPriceInfo = (page) => {
 
   const price = $('.main-price .sales-price').text()
   const paymentOptions = $('.payment-option-rate').text()
-  const title = $('title').text()
 
   return {
-    title,
     price,
     paymentOptions
   }
@@ -35,9 +44,18 @@ const logResults = result => console.log(JSON.stringify(result, null, 2))
 
 const buildPrices = async (baseUrl, done) => {
   const pages = await getPages(baseUrl, urls)
-  done(pages.map(getPriceInfo))
+
+  const result = pages.map(page => {
+    return {
+      url: page.url,
+      name: page.name,
+      priceInfo: getPriceInfo(page)
+    }
+  })
+
+  done(result)
 }
 
-const site = process.argv[2]
+const baseUrl = process.argv[2]
 
-buildPrices(site, logResults)
+buildPrices(baseUrl, logResults)

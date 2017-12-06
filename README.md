@@ -10,6 +10,7 @@ Exemplo
     "shopName": "shoptime",
     "shopUrl": "https://www.shoptime.com.br",
     "product": {
+      "id": "128479153",
       "price": "R$ 2.393,99",
       "name": "Smart TV LED Tela Curva 40\" Samsung 40KU6300 Ultra HD 4K 3 HDMI 2 USB",
       "paymentOptions": "10x de R$ 239,39 s/ juros",
@@ -20,6 +21,7 @@ Exemplo
     "shopName": "submarino",
     "shopUrl": "https://www.submarino.com.br",
     "product": {
+      "id": "128479153",
       "price": "R$ 2.356,99",
       "name": "Smart TV LED Tela Curva 40\" Samsung 40KU6300 Ultra HD 4K 3 HDMI 2 USB",
       "paymentOptions": "10x de R$ 235,69 s/ juros",
@@ -30,6 +32,7 @@ Exemplo
     "shopName": "americanas",
     "shopUrl": "https://www.americanas.com.br",
     "product": {
+      "id": "128479153",
       "price": "R$ 2.591,99",
       "name": "Smart TV LED Tela Curva 40\" Samsung 40KU6300 Ultra HD 4K 3 HDMI 2 USB",
       "paymentOptions": "10x de R$ 259,19 s/ juros",
@@ -37,5 +40,4 @@ Exemplo
     }
   }
 ]
-                                                                                                                                                           
 ```

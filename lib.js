@@ -21,6 +21,7 @@ const getPages = async (baseUrl, urls) => {
       data: page.data,
       productUrl,
       shopUrl: shop.url,
+      id: productId,
       name: shop.name
     }
   })
@@ -36,6 +37,7 @@ const getProductInfo = (page) => {
   const name = $('.product-name').text()
 
   return {
+    id: page.id,
     price,
     name,
     paymentOptions,

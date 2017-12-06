@@ -2,7 +2,7 @@
 
 Exemplo
 
-> b2w https://www.submarino.com.br/produto/132116662/notebook-dell-inspiron-i15-5566-a30p-intel-core-i5-4gb-1tb-tela-led-15.6-windows-10-preto
+> b2w https://www.shoptime.com.br/produto/128479153/smart-tv-led-tela-curva-40-samsung-40ku6300-ultra-hd-4k-3-hdmi-2-usb
 
 ```
 [

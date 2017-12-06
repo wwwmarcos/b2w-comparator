@@ -4,8 +4,8 @@
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2"
   },
-  "main": "cli.js",
+  "main": "lib.js",
   "bin": {
-    "b2w": "index.js"
+    "b2w": "cli.js"
   }
 }

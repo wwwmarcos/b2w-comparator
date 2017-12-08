@@ -2,7 +2,8 @@
   "name": "b2w-comparator",
   "dependencies": {
     "axios": "^0.17.1",
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "cli-table2": "^0.2.0"
   },
   "main": "lib.js",
   "bin": {

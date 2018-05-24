@@ -6,13 +6,32 @@ const Table = require('cli-table2')
 const baseUrl = process.argv[2]
 
 const logResults = result => {
-  const table = new Table()
+  const tables = result.map(data => {
+    const table = new Table()
 
-  result
-    .map(data => [data.shopName, data.product.name, data.product.price])
-    .forEach(data => table.push(data))
+    table.push({
+      loja: [data.shopName]
+    }, {
+      url: [data.product.url]
+    }, {
+      preco: [data.product.price]
+    })
 
-  console.log(table.toString())
+    return table
+  })
+
+  console.log('---')
+  console.log(result[0].product.name)
+  tables.forEach(table => console.log(table.toString()))
 }
 
-buildPrices(baseUrl, logResults)
+const start = async () => {
+  try {
+    const result = await buildPrices(baseUrl)
+    logResults(result)
+  } catch (error) {
+    console.log('shhhh...')
+  }
+}
+
+start()

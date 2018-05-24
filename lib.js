@@ -45,7 +45,7 @@ const getProductInfo = (page) => {
   }
 }
 
-const buildPrices = async (baseUrl, done) => {
+const buildPrices = async (baseUrl) => {
   const pages = await getPages(baseUrl, urls)
 
   const result = pages.map(page => {
@@ -56,7 +56,7 @@ const buildPrices = async (baseUrl, done) => {
     }
   })
 
-  done(result)
+  return result
 }
 
 module.exports = {
